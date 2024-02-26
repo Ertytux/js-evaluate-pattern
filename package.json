@@ -6,7 +6,9 @@
   "source": "src/index.ts",
   "scripts": {
     "test": "index-test-ts",
-    "build": "ts-node src/index.ts"
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "exec": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",

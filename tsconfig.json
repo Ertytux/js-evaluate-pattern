@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "module": "commonjs",
-    "target": "es5",
+    "module": "CommonJS",
+    "target": "ES2017",
     "allowJs": true,
     "strict": true,
-    "esModuleInterop":true    
+    "esModuleInterop":true,
+    "lib": ["esnext"],    
   },
   "include": [
     "src"
