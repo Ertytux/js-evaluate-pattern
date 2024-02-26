@@ -1,0 +1,25 @@
+{
+  "name": "js-evaluate-pattern",
+  "version": "0.0.1",
+  "description": "Evaluates an analysis pattern contained in a logistic graph in json format and returns the evaluation of processing node events.",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "index-test-tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ertytux/js-evaluate-pattern.git"
+  },
+  "keywords": [
+    "Typescript",
+    "DAG",
+    "logistic",
+    "graph"
+  ],
+  "author": "Ertytux <ertytux@proton.me> (http://ecency.com/@ertytux)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ertytux/js-evaluate-pattern/issues"
+  },
+  "homepage": "https://github.com/Ertytux/js-evaluate-pattern#readme"
+}
