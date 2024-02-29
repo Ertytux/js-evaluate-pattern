@@ -35,7 +35,8 @@ async function readJsonFile() {
 (async () => {
   try {
     const data = await readJsonFile(); //ToDo Get argv later
-    console.log("Input Data :\n ", data,"\n\n");
+    console.log("Input Data :\n ", data, "\n\n");
+    console.log("********************************************************************\n");
 
     for (const el of data["nodes"]) {
       let bs: Nodes = new Nodes();
@@ -60,9 +61,17 @@ async function readJsonFile() {
       bs.opvalue = stype != NodeType.inputNode ? el["opvalue"] : 0;
       graphnodes.push(bs);
     }
-    for (const el of data["links"]){
 
+    for (const el of data["links"]) {
+      let bs: BaseL = new BaseL();
+      bs.setval(el["source"], el["target"], el["weight"]);
+      graphlink.push(bs);
     }
+    setlinks();
+    EvaluateNodes();
+    const show = JSON.stringify(graphnodes);
+    const objShow = JSON.parse(show);
+    console.log(objShow);
   } catch (e: any) {
     // Deal with the fact the chain failed
     console.error(e.message);
