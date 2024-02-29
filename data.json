@@ -1,4 +1,40 @@
 {
-  "node1": "abc",
-  "node2": "ejt"
+  "nodes": [
+    {
+      "type": "input",
+      "id": "Indicator1",
+      "label": "",
+      "description": "criminal in area",
+      "value": 0.4,
+      "opvalue": 0
+    },
+    {
+      "type": "input",
+      "id": "Indicator2",
+      "label": "",
+      "description": "criminal with guns",
+      "value": 0.25,
+      "opvalue": 0
+    },
+    {
+      "type": "output",
+      "id": "Event1",
+      "label": "",
+      "description": "Murder Signal",
+      "value": 0,
+      "opvalue": 0.3
+    }
+  ],
+  "links": [
+    {
+      "source": "Indicator1",
+      "target": "Event1",
+      "weight": 0.8
+    },
+    {
+      "source": "Indicator2",
+      "target": "Event1",
+      "weight": 0.2
+    }
+  ]
 }
