@@ -43,6 +43,7 @@ Source is the id of input node and target is the id of the output node. Weight i
 By default in this version the logistic function[^1][^2] is used:
 
 $$X=opvalue + \sum values_{in}*weight_in$$, 
+
 $$result = \frac{1}{1+e^{-X}}$$
 
 The compute are realized over process and output nodes recursively avoiding overevaluation. 
