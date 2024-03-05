@@ -8,7 +8,8 @@
     "test": "index-test-ts",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "exec": "ts-node src/index.ts"
+    "exec": "ts-node src/index.ts",
+    "server" : "ts-node src/restServer.ts"
   },
   "repository": {
     "type": "git",
