@@ -9,7 +9,7 @@ If you will use from you project
 npm install --save git+https://github.com/Ertytux/js-evaluate-pattern.git
 ```
  or clone 
- 
+
  ```bash
 git clone https://github.com/Ertytux/js-evaluate-pattern.git
 cd js-evaluate-pattern
@@ -20,7 +20,7 @@ npm install
 
 ### Input description
 
-The estrada is in a json file that stores a list of nodes and a list of links, see the data file.json as an example. Each node has the following structure:
+The estrada is in a json file that stores a list of nodes and a list of links, see the data file data.json as an example. Each node has the following structure:
 
 ```javascript
 {
