@@ -3,9 +3,17 @@
 > Evaluates an analysis pattern contained in a logistic graph in json format and returns the evaluation of processing node events as json.
 
 ## Install
+If you will use from you project
 
 ```bash
 npm install --save git+https://github.com/Ertytux/js-evaluate-pattern.git
+```
+ or clone 
+ 
+ ```bash
+git clone https://github.com/Ertytux/js-evaluate-pattern.git
+cd js-evaluate-pattern
+npm install
 ```
 
 ## Usage
