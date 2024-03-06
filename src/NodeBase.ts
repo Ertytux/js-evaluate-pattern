@@ -8,7 +8,7 @@ export enum NodeType {
 }
 
 export interface NodeBase {
-  ntype: NodeType;
+  type: NodeType;
   id: string;
   label: string;
   description: string;
@@ -31,7 +31,7 @@ export const EvaluateNodes = (): void => {
 
 
 export class Nodes implements NodeBase {
-  ntype: NodeType;
+  type: NodeType;
   id: string;
   label: string;
   description: string;
@@ -43,7 +43,7 @@ export class Nodes implements NodeBase {
   parametersIn: number[];
   constructor() {
     //default constructor
-    this.ntype = NodeType.inputNode;
+    this.type = NodeType.inputNode;
     this.id = "";
     this.label = "";
     this.description = "";
@@ -55,7 +55,7 @@ export class Nodes implements NodeBase {
     this.parametersIn = new Array<number>();
   }
   set setnode(ip: NodeBase) {
-    this.ntype = ip.ntype;
+    this.type = ip.type;
     this.id = ip.id;
     this.label = ip.label;
     this.description = ip.description;
@@ -79,7 +79,7 @@ export class Nodes implements NodeBase {
     return this.value;
   }
   addNodeIn(sind: number, weight: number): void {
-    if (this.ntype != NodeType.inputNode) {
+    if (this.type != NodeType.inputNode) {
       if (sind != -1) {
         this.nodesIn.push(sind);
         this.parametersIn.push(weight);

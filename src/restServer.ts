@@ -24,7 +24,7 @@ app.post('/api/paterneval', (req: Request, res: Response) => {
         stype = NodeType.processNode;
         break;
     }
-    bs.ntype = stype;
+    bs.type = stype;
     bs.id = el["id"];
     bs.label = el["label"];
     bs.description = el["description"];

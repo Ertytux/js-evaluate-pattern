@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Nodes = exports.EvaluateNodes = exports.graphnodes = exports.NodeType = void 0;
+const EvalFunc_1 = require("./EvalFunc");
 var NodeType;
 (function (NodeType) {
     NodeType[NodeType["inputNode"] = 0] = "inputNode";
@@ -15,19 +16,10 @@ const EvaluateNodes = () => {
     }
 };
 exports.EvaluateNodes = EvaluateNodes;
-function Leval(x) {
-    // función logística
-    // Parámetro "x" es la entrada
-    const k = 1; // Parámetro de escala (ajusta la pendiente de la curva)
-    const L = 1; // Valor límite (valor máximo que puede alcanzar la función)
-    // Fórmula de la función logística
-    const resultado = L / (1 + Math.exp(-k * x));
-    return resultado;
-}
 class Nodes {
     constructor() {
         //default constructor
-        this.ntype = NodeType.inputNode;
+        this.type = NodeType.inputNode;
         this.id = "";
         this.label = "";
         this.description = "";
@@ -39,7 +31,7 @@ class Nodes {
         this.parametersIn = new Array();
     }
     set setnode(ip) {
-        this.ntype = ip.ntype;
+        this.type = ip.type;
         this.id = ip.id;
         this.label = ip.label;
         this.description = ip.description;
@@ -57,13 +49,13 @@ class Nodes {
                 sval += gv * this.parametersIn[it]; //
                 it++;
             }
-            this.value = Leval(sval);
+            this.value = EvalFunc_1.Leval.evaluate(sval);
         }
         this.status = true;
         return this.value;
     }
     addNodeIn(sind, weight) {
-        if (this.ntype != NodeType.inputNode) {
+        if (this.type != NodeType.inputNode) {
             if (sind != -1) {
                 this.nodesIn.push(sind);
                 this.parametersIn.push(weight);
