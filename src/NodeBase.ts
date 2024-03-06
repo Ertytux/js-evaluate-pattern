@@ -1,3 +1,6 @@
+import {Leval} from './EvalFunc';
+
+
 export enum NodeType {
   inputNode,
   processNode,
@@ -25,17 +28,7 @@ export const EvaluateNodes = (): void => {
   }
 };
 
-function Leval(x: number): number {
-  // función logística
-  // Parámetro "x" es la entrada
-  const k = 1; // Parámetro de escala (ajusta la pendiente de la curva)
-  const L = 1; // Valor límite (valor máximo que puede alcanzar la función)
 
-  // Fórmula de la función logística
-  const resultado = L / (1 + Math.exp(-k * x));
-
-  return resultado;
-}
 
 export class Nodes implements NodeBase {
   ntype: NodeType;
@@ -80,7 +73,7 @@ export class Nodes implements NodeBase {
         sval += gv * this.parametersIn[it]; //
         it++;
       }
-      this.value = Leval(sval);
+      this.value = Leval.evaluate(sval);
     }
     this.status = true;
     return this.value;
